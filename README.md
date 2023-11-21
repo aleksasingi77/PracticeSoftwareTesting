@@ -18,25 +18,25 @@ This README file will guide you to run the API tests in the command line with Ne
 
 1. **Clone the repository:**
    Clone the repository containing your Postman collection. If you don't have a Git
-   repository, you can use the collection file directly.
+   repository, you can use the collection file directly. <br>
    git clone https://github.com/your-username/your-repo.git
    
 2. **Navigate to the Repository:**
-   Change to the directory where your Postman collection is located.
+   Change to the directory where your Postman collection is located. <br>
    cd your-repo
 
 3. **Export Environment Variables (If Needed):**
    If your collection relies on environment variables, export them using a file
-   (e.g., environment.json).
+   (e.g., environment.json). <br>
    newman run Practice Software Testing.postman_collection.json --environment environment.json
 
 4. **Run Newman:**
-   Execute the following command to run your Postman collection using Newman.
+   Execute the following command to run your Postman collection using Newman. <br>
    newman run Practice Software Testing.postman_collection.json
 
 5. **Export Results:**
    newman run Practice Software Testing.postman_collection.json --reporters cli,junit --reporter-junit-export results.xml
 
 # Notes:
-  Ensure that the necessary dependencies are installed and the Postman collection is up-to-date.
+  Ensure that the necessary dependencies are installed and the Postman collection is up-to-date. <br>
   Review and update the command parameters based on your specific requirements.
