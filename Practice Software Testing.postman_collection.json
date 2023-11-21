@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "4e404269-4304-4479-b320-ca8c0f051d63",
+		"name": "Practice Software Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23844654"
+	},
+	"item": [
+		{
+			"name": "Create New User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var responseBody = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is JSON\", function(){\r",
+							"    pm.response.to.have.jsonBody();\r",
+							"});\r",
+							"\r",
+							"pm.test(\"First name is 'Aleksa'\", function(){\r",
+							"    pm.expect(responseBody.first_name).to.equal('Aleksa');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Last name is 'Kuzmanovic'\", function(){\r",
+							"    pm.expect(responseBody.last_name).to.equal('Kuzmanovic');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Address is 'Street 1'\", function(){\r",
+							"    pm.expect(responseBody.address).to.equal('Street 1');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"City is 'Belgrade'\", function(){\r",
+							"    pm.expect(responseBody.city).to.equal('Belgrade');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"State is 'Vozdovac'\", function(){\r",
+							"    pm.expect(responseBody.state).to.equal('Vozdovac');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Postcode is '11000'\", function(){\r",
+							"    pm.expect(responseBody.postcode).to.equal('11000');\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": \"Aleksa\",\r\n  \"last_name\": \"Kuzmanovic\",\r\n  \"address\": \"Street 1\",\r\n  \"city\": \"Belgrade\",\r\n  \"state\": \"Vozdovac\",\r\n  \"country\": \"Country\",\r\n  \"postcode\": \"11000\",\r\n  \"phone\": \"0987654321\",\r\n  \"dob\": \"1970-01-01\",\r\n  \"email\": \"alek2232@kuzmanovic.example\",\r\n  \"password\": \"super-secret\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.practicesoftwaretesting.com/users/register",
+					"protocol": "https",
+					"host": [
+						"api",
+						"practicesoftwaretesting",
+						"com"
+					],
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
